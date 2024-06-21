@@ -10,7 +10,7 @@ const SimilarPage = () => {
   }, [id])
 
   const getSimilarMovies = async () => {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=f50903fbca07fdf0f53872cb703e824f&language=en-US`);
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${import.meta.env.VITE_API}&language=en-US`);
     if (!res.ok) {
       throw json({ message: "Can't get Movies" });
     }

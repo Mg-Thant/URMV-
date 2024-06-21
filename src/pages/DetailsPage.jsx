@@ -65,7 +65,7 @@ export default DetailsPage;
 
 export const loader = async ({ params }) => {
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.id}?api_key=f50903fbca07fdf0f53872cb703e824f&language=en-US}`
+    `https://api.themoviedb.org/3/movie/${params.id}?api_key=${import.meta.env.VITE_API}&language=en-US}`
   );
   if (!res.ok) {
     throw json({ message: "Not Found" }, { status: 404 });

@@ -25,7 +25,7 @@ export default Searched;
 
 export const loader = async ({ params }) => {
   const res = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=f50903fbca07fdf0f53872cb703e824f&language=en-US&query=${params.title}&page=1&include_adult=false`
+    `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API}&language=en-US&query=${params.title}&page=1&include_adult=false`
   );
   if(!res.ok) {
     throw json({message : "Can't search movies"})
